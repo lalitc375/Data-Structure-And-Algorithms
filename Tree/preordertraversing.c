@@ -24,16 +24,33 @@ void preordertraversing(struct node * root)
 	preordertraversing(root->left);
 	preordertraversing(root->right);
 }
+int isBST(struct node  * root)
+{
+    // return 1 it tree is BST else 0
+    if(!root)   return 1;
+    if(!root->left&&!root->right)   return 1;
+    if(root->left)
+    {
+        if(root->data>=root->left->data)
+            return isBST(root->left);
+        else
+            return 0;
+    }
+    else if(root->right)
+    {
+        if(root->data<=root->right->data)
+            return isBST(root->right);
+        else
+            return 0;
+    }
+}
 int main()
 {
 	struct node * root =(struct node *)malloc(sizeof(struct node));
-	root->data=10;
-	root->right=newnode(9);
-	root->left=newnode(8);
-	root->right->right=newnode(7);
-	root->right->left=newnode(6);
-	root->left->right=newnode(5);
-	root->left->left=newnode(4);
-	preordertraversing(root);
+	root->data=5;
+	root->right=newnode(2);
+	root->left=newnode(3);
+
+    printf("%d",isBST(root));
 	return 0;
 }
