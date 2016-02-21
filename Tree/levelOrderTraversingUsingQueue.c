@@ -94,7 +94,6 @@ void leveltraversing(struct node * root)
 		}
 	}	
 }
-
 int main()
 {
 	struct node * root =(struct node *)malloc(sizeof(node));

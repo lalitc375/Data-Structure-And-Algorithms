@@ -4,12 +4,13 @@
 struct node
 {
 	int data;
-{
+
 	struct node * right,*left;
 
 };
 struct node * newnode(int data)
-	struct node * _node =(struct node *)malloc(sizeof(struct node));
+	{
+	 node * _node =(struct node *)malloc(sizeof(struct node));
 	_node->data=data;
 	_node->right=_node->left=NULL;
 	return _node;

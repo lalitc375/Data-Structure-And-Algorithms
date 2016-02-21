@@ -50,7 +50,7 @@ int countPrefix(struct trie * node,char *s)
 {
     if(s[0]=='\0')
         return node->prefixs;
-    else if(node->children[s[0]-'a']=='\0')
+    else if(node->children[s[0]-'a']==NULL)
         return 0;
     else
         return countPrefix(node->children[s[0]-'a'],s+1);
