@@ -37,6 +37,9 @@ void updateBIT(LL BIT[],LL index,LL val,LL len)   // Here Index is index of val 
     }
 }
 
+
+
+// Get CummSum
 LL getCummSum(LL BIT[],LL index)
 {
     LL sum=0;
