@@ -13,9 +13,9 @@ void max_heapify(long int arr[],long int n,long int size)
 	long int largest=n;
 	long int left=2*n+1;
 	long int right=2*n+2;
-	if((arr[left] > arr[largest]) && (left < size))
+	if((left < size)&&(arr[left] > arr[largest]) )
 		largest=left;
-	if ( (arr[right] > arr[largest]) && (right < size))
+	if ((right < size)&&(arr[right] > arr[largest]) )
 		largest=right;
 	if(largest != n)
 	{
