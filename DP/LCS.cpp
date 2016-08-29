@@ -5,9 +5,6 @@
 using namespace std;
 int LCS(char A[],char B[],int m,int n)
 {
-
-    //cout<<A<<" "<<m<<endl;
-    //cout<<B<<" "<<n<<endl;
     int DP[m+1][n+1];
     int i,j;
     for(i=0;i<=m;++i)
