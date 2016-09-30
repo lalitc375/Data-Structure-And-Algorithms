@@ -1,26 +1,59 @@
 #include<bits/stdc++.h>
+#define LL long long
+#define INF 150000
 using namespace std;
 int main()
 {
-    int A[4][4]={{0,5,-1,500},{500,0,2,-2},{500,500,0,3},{4,500,500,0}};
-    int W[4][4][4]={0};
-    int i,j,k;
-    for(i=0;i<4;++i)
-        for(j=0;j<4;++j)
-            W[0][i][j]=min(A[i][j],A[i][0]+A[0][j]);        //Through Node 0
-    for(k=1;k<4;++k)            //Through Node 1,2,3
+    LL N,M;
+    scanf("%lld %lld",&N,&M);
+    LL Adj[N+5][N+5];
+    LL Dist[N+5][N+5];
+    LL i,j,k,u,v,w,s;
+    for(i=1;i<=N;++i)
+        for(j=1;j<=N;++j)
+            Adj[i][j]=INF;
+    for(i=0;i<M;++i)
     {
-        for(i=0;i<4;++i)
-            for(j=0;j<4;++j)
-            W[k][i][j]=min(W[k-1][i][j],W[k-1][i][k]+W[k-1][k][j]);
+        scanf("%lld %lld %lld",&u,&v,&w);
+        Adj[u][v]=min(w,Adj[u][v]);
     }
-    for(i=0;i<4;++i)
+    for(i=1;i<=N;++i)
     {
-        for(j=0;j<4;++j)
+        for(j=1;j<=N;++j)
         {
-            printf("%d ",W[3][i][j]);
+            if(i==j)
+                Dist[i][j]=0;
+            else
+                Dist[i][j]=Adj[i][j];
         }
-    printf("\n");
     }
+
+
+    for(k=1;k<=N;++k)
+        {
+         for(i=1;i<=N;++i)
+             {
+             for(j=1;j<=N;++j)
+             {
+                 Dist[i][j]=min(Dist[i][j],Dist[i][k]+Dist[k][j]);
+          //   printf("%lld ",Adj[i][j]);
+             }
+            //    printf("\n");
+         }
+
+    }
+
+    LL Q;
+    scanf("%lld",&Q);
+    while(Q--)
+        {
+        scanf("%lld %lld",&u,&v);
+        if(Dist[u][v]==INF)
+            printf("-1\n");
+        else
+            printf("%lld\n",Dist[u][v]);
+        }
     return 0;
 }
+
+
