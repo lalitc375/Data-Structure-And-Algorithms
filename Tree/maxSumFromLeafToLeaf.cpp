@@ -35,14 +35,15 @@ int maxSumFromLeafToLeaf(struct BTreeNode * root,int &ps)
 int main()
 {
     struct BTreeNode * root= NewNode(4);
-    root->data=-100;
-    root->left=NewNode(4);
-    root->right=NewNode(-5);
-    root->left->left=NewNode(-5);
-    root->left->right=NewNode(50);
-    root->left->left->left=NewNode(500);
-    root->right->left=NewNode(-6);
-    root->right->right=NewNode(-7);
+    root->data=1;
+    root->left=NewNode(7);
+    root->right=NewNode(2);
+    root->left->left=NewNode(4);
+    root->left->right=NewNode(5);
+    root->right->left=NewNode(8);
+    root->right->right=NewNode(4);
+    root->left->left->left=NewNode(3);
+    root->left->left->right=NewNode(6);
     int sol=INT_MIN;
     maxSumFromLeafToLeaf(root,sol);
     cout<<sol;
