@@ -12,7 +12,7 @@ int main()
     D[3]=INT_MAX/2;
     int source=2;       //Source Vertex
     D[source]=0;
-    for(k=0;k<4;++k)
+    for(k=0;k<3;++k)
     {
         for(i=0;i<4;++i)
             for(j=0;j<4;++j)

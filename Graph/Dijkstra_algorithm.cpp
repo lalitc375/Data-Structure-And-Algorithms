@@ -29,7 +29,7 @@ int main()
                 min_loc=i;
             }
         }
-       // cout<<min_loc<<endl;
+        //cout<<min1<<endl;
         visited[min_loc]=1;
         for(i=0;i<4;++i)
             distance[i]=min(distance[i],distance[min_loc]+W[min_loc][i]);

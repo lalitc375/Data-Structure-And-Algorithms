@@ -60,7 +60,7 @@ struct node* insertNode(struct node* root,int key)
 {
     if(!root)
         return newNode(key);
-    if(root->key<key)
+    if(root->key>key)
         root->left=insertNode(root->left,key);
     else
         root->right=insertNode(root->right,key);

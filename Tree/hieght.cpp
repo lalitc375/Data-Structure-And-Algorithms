@@ -25,8 +25,8 @@ int main()
     struct BTreeNode * root= NewNode(4);
     root->data=1;
     root->left=NewNode(4);
-    root->right=NewNode(5);
     root->left->left=NewNode(4);
+    root->right=NewNode(5);
     //root->left->left->left=NewNode(5);
     root->right->left=NewNode(6);
     root->right->right=NewNode(7);

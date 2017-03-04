@@ -6,7 +6,7 @@ struct subset
     LL parent;
     LL rank;
 };
-LL findParent(subset subsets[],LL i)
+LL findParent(subset subsets[],LL i)            //Path Compression
 {
     if(subsets[i].parent!=i)
         subsets[i].parent=findParent(subsets,subsets[i].parent);
@@ -34,8 +34,6 @@ struct node
     };
 bool compare(node a,node b)
     {
-        if(a.weigth==b.weigth)
-            return (a.weigth+a.p.first+a.p.second)<=(b.weigth+b.p.first+b.p.second);
         return a.weigth<b.weigth;
     }
 

@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    vector<vector<int> >Adj(10);
+    list<int> Adj[10];
     Adj[0].push_back(0);
     Adj[1].push_back(1);
     Adj[2].push_back(3);
@@ -22,7 +22,7 @@ int main()
     for(int i=0;i<10;++i)
     {
 
-        for(vector<int>:: iterator itr=Adj[i].begin();itr!=Adj[i].end();++itr)
+        for(list<int>:: iterator itr=Adj[i].begin();itr!=Adj[i].end();++itr)
             cout<<*itr<<' ';
         printf("\n");
     }
