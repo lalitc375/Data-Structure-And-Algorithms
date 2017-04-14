@@ -14,7 +14,7 @@ struct BTreeNode * NewNode(int data)
     Temp->left=Temp->right=NULL;
     return Temp;
 }
-struct BTreeNode *  lca(struct BTreeNode * root,int v1,int v2,bool &vfound1,bool &vfound2)
+struct BTreeNode *  lca(struct BTreeNode * root,int v1,int v2,bool vfound1,bool vfound2)
 {
         if(!root)
             return root;
@@ -52,7 +52,7 @@ int main()
     root->right->left=NewNode(6);
     root->right->right=NewNode(7);
     bool v1=false,v2=false;
-    struct BTreeNode * temp=lca(root,40,500,v1,v2);
+    struct BTreeNode * temp=lca(root,4,5,v1,v2);
     cout<<temp->data;
 //    cout<<hieght(root);
     return 0;
